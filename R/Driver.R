@@ -1,6 +1,6 @@
 #
 # General:
-#      This file is pary of .NET Bridge
+#      This file is part of .NET Bridge
 #
 # Copyright:
 #      2010 Jonathan Shore
@@ -57,10 +57,10 @@
         {
             if (.Platform$OS.type != "windows")
             {
-                paths <- c("/usr/bin/mono64","/usr/local/bin/mono64","/Library/Frameworks/Mono.framework/Commands/mono64")
+                paths <- c("/usr/bin/mono", "/usr/bin/mono64","/usr/local/bin/mono64","/Library/Frameworks/Mono.framework/Commands/mono64")
                 mono <- paths[sapply(paths, file.exists)][1]
                 if (is.null(mono))
-                    stop ("could not find mono64")
+                    stop ("could not find mono or mono64")
             }
         
             packagedir <- path.package("rDotNet")
